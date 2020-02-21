@@ -41,5 +41,10 @@
   mkdir ~/.config/nvim
   # copy the prepared config file there
   cp ./vim-config/init.vim ~/.config/nvim/init.vim
+  
+  # install vim plug
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  # prompt user to install the plugins
   echo 'please run :PlugInstall on next neovim run'
 # ---------------------- #

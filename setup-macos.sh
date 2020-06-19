@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# update bash prompt just in case #
+echo 'export PS1="\[\e[33m\]\A\[\e[m\] \[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[31m\]\h\[\e[m\] \[\e[32m\]\w\[\e[m\]\n\[\e[31m\]\\$\[\e[m\] "' > ~/.bashrc
+
 # install homebrew #
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -41,10 +46,24 @@
   mkdir ~/.config/nvim
   # copy the prepared config file there
   cp ./vim-config/init.vim ~/.config/nvim/init.vim
-  
+
   # install vim plug
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   # prompt user to install the plugins
   echo 'please run :PlugInstall on next neovim run'
 # ---------------------- #
+
+# install neofetch #
+  brew install neofetch
+  # add the behaviour to zsh startup
+  echo "add neofetch to zsh startup? (y/n)"
+  read nf_start
+  if [[ $nf_start == "Y" || $nf_start == "y" ]]; then
+    echo "
+## Startup ##
+neofetch
+
+##
+" >> ~/.zshrc
+  fi

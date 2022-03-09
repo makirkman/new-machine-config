@@ -4,7 +4,7 @@
 echo 'export PS1="\[\e[33m\]\A\[\e[m\] \[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[31m\]\h\[\e[m\] \[\e[32m\]\w\[\e[m\]\n\[\e[31m\]\\$\[\e[m\] "' > ~/.bashrc
 
 # install homebrew #
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # set up zsh #
   # set zsh as default shell
